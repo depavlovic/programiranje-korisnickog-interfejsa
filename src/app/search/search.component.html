@@ -21,6 +21,18 @@
                       <mat-option [value]="movie.cast.join(',')" *ngFor="let movie of filteredMovies">{{movie.cast.join(',')}}</mat-option>
                     </mat-select>
                   </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Choose duration time</mat-label>
+                    <mat-select>
+                      <mat-option [value]="movie.duration" *ngFor="let movie of filteredMovies">{{movie.duration}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Choose ticketPrice</mat-label>
+                    <mat-select>
+                      <mat-option [value]="movie.ticketPrice" *ngFor="let movie of filteredMovies">{{movie.ticketPrice}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
                 
               </form>
               <mat-card-actions>

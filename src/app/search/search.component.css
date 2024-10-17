@@ -1,0 +1,35 @@
+h1{
+    color: white;
+    font-size: 35px;
+}
+.container {
+    background-color: black; 
+    height: 100vh;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding: 20px; 
+}
+
+.search-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white; 
+    border-radius: 10px;
+    width: 400px; 
+}
+
+mat-form-field {
+    width: 100%; 
+}
+
+mat-card-actions a {
+    background-color: green;
+    color: white; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none; 
+}
+
+mat-card-actions a:hover {
+    color: white; 
+}

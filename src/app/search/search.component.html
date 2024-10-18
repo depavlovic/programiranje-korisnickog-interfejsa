@@ -5,41 +5,53 @@
             <form class="example-form">
                 <mat-form-field>
                     <mat-label>Choose movie title</mat-label>
-                    <mat-select>
+                    <mat-select [(ngModel)]="searchCriteria.title" [ngModelOptions]="{standalone: true}">
                       <mat-option [value]="movie.title" *ngFor="let movie of filteredMovies">{{movie.title}}</mat-option>
                     </mat-select>
                   </mat-form-field>
                   <mat-form-field>
                     <mat-label>Choose genre</mat-label>
-                    <mat-select>
+                    <mat-select [(ngModel)]="searchCriteria.genre" [ngModelOptions]="{standalone: true}" >
                       <mat-option [value]="movie.genre" *ngFor="let movie of filteredMovies">{{movie.genre}}</mat-option>
                     </mat-select>
                   </mat-form-field>
                   <mat-form-field>
                     <mat-label>Choose actor</mat-label>
-                    <mat-select>
+                    <mat-select [(ngModel)]="searchCriteria.actors" [ngModelOptions]="{standalone: true}">
                       <mat-option [value]="movie.cast.join(',')" *ngFor="let movie of filteredMovies">{{movie.cast.join(',')}}</mat-option>
                     </mat-select>
                   </mat-form-field>
                   <mat-form-field>
                     <mat-label>Choose duration time</mat-label>
-                    <mat-select>
+                    <mat-select [(ngModel)]="searchCriteria.duration" [ngModelOptions]="{standalone: true}">
                       <mat-option [value]="movie.duration" *ngFor="let movie of filteredMovies">{{movie.duration}}</mat-option>
                     </mat-select>
                   </mat-form-field>
                   <mat-form-field>
                     <mat-label>Choose ticketPrice</mat-label>
-                    <mat-select>
+                    <mat-select [(ngModel)]="searchCriteria.ticketPrice" [ngModelOptions]="{standalone: true}">
                       <mat-option [value]="movie.ticketPrice" *ngFor="let movie of filteredMovies">{{movie.ticketPrice}}</mat-option>
                     </mat-select>
                   </mat-form-field>
                 
               </form>
               <mat-card-actions>
-                <a mat-button>
+                <button mat-button type="button" (click)="doSearch()">
                         <i class="fa-solid fa-search"></i>Search now
-                </a>
+                </button>
               </mat-card-actions>
+              <div *ngIf="searchResults.length > 0">
+                <h2>Search Results</h2>
+                <ul>
+                    <li *ngFor="let movie of searchResults">
+                        <strong>{{ movie.title }}</strong> - 
+                        {{ movie.genre }} - 
+                        {{ movie.cast.join(', ') }} - 
+                        {{ movie.duration }} - 
+                        {{ movie.ticketPrice }} RSD
+                    </li>
+                </ul>
+            </div>
         </mat-card-content>
     </mat-card>
 </div>

@@ -33,3 +33,7 @@ mat-card-actions a {
 mat-card-actions a:hover {
     color: white; 
 }
+
+h2{
+    color: red;
+}

@@ -1,1 +1,52 @@
-<p>reservation works!</p>
+<div class="reservation-container">
+    <h1>Rezervacija filmova</h1>
+    <div *ngIf="reservations.length > 0; else noReservations">
+        <mat-card *ngFor="let reservation of reservations" class="reservation-card">
+            <mat-card-header>
+                <mat-card-title>{{ reservation.movieTitle }}</mat-card-title>
+                <mat-card-subtitle>{{ reservation.genre }} - {{ reservation.duration }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p><strong>Director:</strong> {{ reservation.director }}</p>
+                <p><strong>Cast:</strong> {{ reservation.actors.join(', ') }}</p>
+                <p><strong>Ticket Price:</strong> {{ reservation.ticketPrice }} RSD</p>
+                <p><strong>Quantity:</strong> {{ reservation.quantity }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button (click)="removeFromCart(reservation.movieTitle)">
+                    Ukloni iz korpe
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <ng-template #noReservations>
+        <mat-card>
+            <mat-card-content>
+                <p>Nema rezervacija.</p>
+            </mat-card-content>
+        </mat-card>
+    </ng-template>
+
+    <mat-card class="add-movie-card">
+        <mat-card-header>
+            <mat-card-title class="mat-card-title">Add movie in Cart</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field>
+                <mat-label>Choose Movie</mat-label>
+                <mat-select [(ngModel)]="selectedMovie">
+                    <mat-option *ngFor="let movie of movies" [value]="movie">{{ movie.title }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Quantity</mat-label>
+                <input matInput type="number" [(ngModel)]="quantity" min="1" />
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="addToCart(selectedMovie, quantity)" [disabled]="!selectedMovie">
+                Add in Cart
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

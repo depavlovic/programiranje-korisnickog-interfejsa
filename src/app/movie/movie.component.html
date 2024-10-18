@@ -11,6 +11,11 @@
       <p><strong>Cast:</strong> {{ movie.cast.join(', ') }}</p>
       <p><strong>Ticket Price:</strong> {{ movie.ticketPrice }} RSD</p>
     </mat-card-content>
+    <mat-card-actions class="mat-card-actions">
+      <button mat-button [routerLink]="['/reservations']" (click)="reserveMovie(movie)">
+        Reservations
+      </button>
+    </mat-card-actions>
   </mat-card>
 </div>
 

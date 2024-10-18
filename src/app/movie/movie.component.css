@@ -12,3 +12,8 @@
     margin: 20px;
     color: white;
   }
+
+  .mat-card-actions{
+    display: flex;
+    justify-content: left;
+  }

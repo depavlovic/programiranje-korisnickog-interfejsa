@@ -1,0 +1,44 @@
+.reservation-container {
+    padding: 20px;
+    color: white;
+}
+
+.reservation-card {
+    margin: 10px 0;
+}
+
+.add-movie-card {
+    margin-top: 20px;
+}
+
+.mat-card-title{
+    color: white;
+}
+
+.reservation-container {
+    background-color: #333; /* Primer tamne pozadine */
+    padding: 20px;
+}
+
+.mat-form-field {
+    color: white; /* Boja za mat-label */
+}
+
+.mat-form-field .mat-select,
+.mat-form-field input {
+    color: white; /* Boja teksta unutar polja */
+}
+
+.mat-form-field .mat-label {
+    color: rgba(255, 255, 255, 0.7); /* Boja za label (može se prilagoditi) */
+}
+
+.mat-form-field .mat-select .mat-option {
+    color: black; /* Boja teksta unutar mat-option */
+}
+
+/* Opcionalno, za placeholder */
+.mat-form-field input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+

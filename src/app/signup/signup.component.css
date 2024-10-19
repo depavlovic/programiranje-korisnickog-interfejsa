@@ -1,0 +1,36 @@
+.signup-form{
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+h1{
+    color: white;
+}
+
+.width-full{
+    width: 100%;
+}
+
+.container {
+    background-color: black; 
+    height: 100vh;
+    padding: 20px;
+    
+    
+    
+}
+
+
+
+mat-card-actions button,
+mat-card-actions a {
+    margin: 0 8px; /* Razmak između dugmadi */
+}
+
+
+
+
+
+

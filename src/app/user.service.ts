@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { UserModel } from "./user.model";
-import bcrypt from "bcrypt";
+
 
 
 
@@ -10,17 +10,35 @@ import bcrypt from "bcrypt";
 })
 
 export class UserService{
+
+    private static instance: UserService
+
+    private constructor(){
+       
+    }
+
+    public static getInstance(){
+        if(this.instance == null) 
+            this.instance = new UserService
+        return this.instance
+    }
+
     private retrieveAllUsers():UserModel[] {
         let json = localStorage.getItem('users')
         if(json == null){
-           localStorage.setItem('users',JSON.stringify([]))
+            const defaultUser={
+                email:'dejan.pavlovic.22@singimail.rs',
+                name:'Dejan',
+                surname:'Pavlovic',
+                password: 'dpavlovic'
+            }
+           localStorage.setItem('users',JSON.stringify([defaultUser]))
            json = localStorage.getItem('users')
         }
         return JSON.parse(json!)
     }
 
     public createUser(model:UserModel){
-        model.password=bcrypt.hashSync(model.password,12)
             const arr = this.retrieveAllUsers()
             if(arr.find(user=>user.email = model.email))
                 throw new Error('EMAIL_ALREADY_EXISTS')
@@ -30,7 +48,7 @@ export class UserService{
 
     public login(email:string,password:string){
         const arr = this.retrieveAllUsers()
-        const usr = arr.find(user=> user.email == email && bcrypt.compareSync(password,user.password))
+        const usr = arr.find(user=> user.email == email && password == user.password)
         
         
         if(usr == undefined)
@@ -56,7 +74,7 @@ export class UserService{
     }
     public changePassword(password: string){
         const active = this.getCurrentUser()
-        active.password = bcrypt.hashSync(password,12)
+        active.password = password
 
         const all = this.retrieveAllUsers()
         for(let user of all)

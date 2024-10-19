@@ -1,0 +1,21 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    background-color: black; 
+}
+
+.login-form {
+    width: 400px; 
+    color: white; 
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: column; 
+}
+
+mat-form-field {
+    margin-bottom: 16px; 
+}

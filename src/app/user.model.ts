@@ -3,5 +3,5 @@ export interface UserModel{
     name:string;
     surname:string;
     password: string;
-    booked: number[]
+
 }

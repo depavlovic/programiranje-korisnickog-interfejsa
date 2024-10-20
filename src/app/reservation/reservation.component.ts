@@ -27,6 +27,8 @@ export class ReservationComponent implements OnInit {
     this.ticketCount = this.reservationService.getTicketCount();
   }
   ngOnInit(): void {
+    this.loadReservations();
+    this.movie = this.reservationService.getSelectedMovie();
     this.movie = this.reservationService.getSelectedMovie();
     if (!this.movie) {
       console.error('No movie selected'); 
@@ -39,6 +41,19 @@ export class ReservationComponent implements OnInit {
 
   }
 
+  loadReservations(): void {
+    const savedReservations = localStorage.getItem('myReservations');
+    if (savedReservations) {
+      this.reservations = JSON.parse(savedReservations);
+    } else {
+      this.reservations = [];
+    }
+  }
+
+  saveReservations(): void {
+    localStorage.setItem('myReservations', JSON.stringify(this.reservations));
+  }
+
   getTotalPrice() {
     return this.reservationService.getTotalPrice();
   }
@@ -47,6 +62,7 @@ export class ReservationComponent implements OnInit {
     if (this.movie) {
       const reservation = { title: this.movie.title, ticketCount: this.ticketCount };
       this.reservations.push(reservation);
+      this.saveReservations();
       //@ts-ignore
       Swal.fire({
         title: 'Reservation Confirmed!',
@@ -72,6 +88,7 @@ export class ReservationComponent implements OnInit {
   }
   deleteReservation(index: number) {
     this.reservations.splice(index, 1);
+    this.saveReservations();
     //@ts-ignore
     Swal.fire({
       title: 'Reservation Deleted',

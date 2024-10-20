@@ -47,7 +47,9 @@ export class MovieComponent implements OnInit {
         awful: false,
       };
     });
+
   }
+  
 
   reserveMovie(movie: Movie) {
     this.router.navigate(['/reservations']);

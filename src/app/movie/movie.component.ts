@@ -11,6 +11,7 @@ import { ReservationService } from '../reservation.service';
 
 
 
+
 @Component({
   selector: 'app-movie',
   standalone: true,

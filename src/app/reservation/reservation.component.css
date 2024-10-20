@@ -16,6 +16,29 @@
     justify-content: center; 
   }
 
+  .reservation-page {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .reservation-container,
+  .reservation-management {
+    width: 45%;
+  }
+  
+  .reservation-management ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .reservation-management li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+
 
 
 

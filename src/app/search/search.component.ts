@@ -57,8 +57,31 @@ export class SearchComponent implements OnInit {
              (!duration || movie.duration === duration) &&
              (!ticketPrice || movie.ticketPrice.toString() === ticketPrice);
     });
-    console.log('Search results:', this.searchResults);
-
+    const resultTitles = this.searchResults.map(movie => movie.title).join(', ');
+    //@ts-ignore
+    Swal.fire({
+      title: 'Search Complete!',
+      text: `Found ${this.searchResults.length} result(s): ${resultTitles}`,
+      icon: 'info',
+      confirmButtonText: 'OK',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      },
+      timer: 5000, // automatski zatvori nakon 5 sekundi
+      timerProgressBar: true,
+      willClose: () => {
+      //@ts-ignore
+        Swal.fire({
+          title: 'Thank You!',
+          text: 'Feel free to search again.',
+          icon: 'success',
+          confirmButtonText: 'Okay'
+        });
+      }
+    });
 }
 
 }

@@ -13,11 +13,16 @@
       <p><strong>Ticket Price:</strong> {{ movie.ticketPrice }} RSD</p>
       <div>
         <h4>Rate the movie:</h4>
-        <mat-checkbox [(ngModel)]="localRating[movie.title].excellent">Excellent</mat-checkbox>
-        <mat-checkbox [(ngModel)]="localRating[movie.title].veryGood">Very Good</mat-checkbox>
-        <mat-checkbox [(ngModel)]="localRating[movie.title].good">Good</mat-checkbox>
-        <mat-checkbox [(ngModel)]="localRating[movie.title].bad">Bad</mat-checkbox>
-        <mat-checkbox [(ngModel)]="localRating[movie.title].awful">Awful</mat-checkbox>
+        <mat-checkbox [(ngModel)]="localRating[movie.title].excellent">
+          <i class="fas fa-star" style="color: gold;" ></i>Excellent</mat-checkbox>
+        <mat-checkbox [(ngModel)]="localRating[movie.title].veryGood">
+          <i class="fas fa-star-half-alt" style="color: orange;"></i>Very Good</mat-checkbox>
+        <mat-checkbox [(ngModel)]="localRating[movie.title].good">
+          <i class="fas fa-thumbs-up" style="color: green;"></i>Good</mat-checkbox>
+        <mat-checkbox [(ngModel)]="localRating[movie.title].bad">
+          <i class="fas fa-thumbs-down" style="color: red;"></i>Bad</mat-checkbox>
+        <mat-checkbox [(ngModel)]="localRating[movie.title].awful">
+          <i class="fas fa-trash" style="color: darkred;"></i> Awful</mat-checkbox>
       </div>
     </mat-card-content>
     <mat-card-actions class="mat-card-actions">

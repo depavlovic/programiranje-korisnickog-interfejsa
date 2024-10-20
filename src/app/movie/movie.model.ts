@@ -8,6 +8,7 @@ export interface Movie{
     cast: string[];
     releaseDate: string;
     ticketPrice: number;
+    rating:string[];
     
 
 }

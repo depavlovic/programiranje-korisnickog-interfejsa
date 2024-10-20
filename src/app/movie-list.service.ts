@@ -14,10 +14,10 @@ export class MovieListService {
       genre: 'Action/Thriller',
       duration: '169 min',
       director: 'Chad Stahelski',
-      cast: ['Keanu Reeves', 'Laurence Fishburne','George Georgiou'],
+      cast: ['Keanu Reeves', 'Laurence Fishburne', 'George Georgiou'],
       releaseDate: '2023-03-24',
       ticketPrice: 600,
-      
+      rating: []
     },
     {
       title: 'Interstellar',
@@ -28,7 +28,7 @@ export class MovieListService {
       cast: ['MatthewMcConaughey', 'Anne Hathaway'],
       releaseDate: '2014-11-05',
       ticketPrice: 700,
-      
+      rating: []
     },
     {
       title: 'Deadpool & Wolverine',
@@ -36,10 +36,10 @@ export class MovieListService {
       genre: 'Action',
       duration: '140 min',
       director: 'Shawn Levy',
-      cast: ['Ryan Reynolds', 'Emma Corrin','Hugh Jackman'],
+      cast: ['Ryan Reynolds', 'Emma Corrin', 'Hugh Jackman'],
       releaseDate: '2024-06-25',
       ticketPrice: 550,
-      
+      rating: []
     },
     {
       title: 'Venom: The Last Dance',
@@ -50,7 +50,7 @@ export class MovieListService {
       cast: ['Tom Hardy', 'Juno Temple'],
       releaseDate: '2024-10-25',
       ticketPrice: 650,
-      
+      rating: []
     },
     {
       title: 'Fast X',
@@ -58,10 +58,10 @@ export class MovieListService {
       genre: 'Action/Drama',
       duration: '115 min',
       director: 'Louis Letterier',
-      cast: ['Vin Diesel', 'Michelle Rodriguez','Jason Statham'],
+      cast: ['Vin Diesel', 'Michelle Rodriguez', 'Jason Statham'],
       releaseDate: '2023-03-19',
       ticketPrice: 600,
-      
+      rating: []
     },
     {
       title: 'Shutter Island',
@@ -69,10 +69,10 @@ export class MovieListService {
       genre: 'Mystery/Thriller',
       duration: '138 min',
       director: 'Martin Scorsese',
-      cast: ['Leonardo DiCaprio', 'Emily Mortimer','Mark Ruffalo'],
+      cast: ['Leonardo DiCaprio', 'Emily Mortimer', 'Mark Ruffalo'],
       releaseDate: '2010-03-11',
       ticketPrice: 700,
-      
+      rating: []
     },
     {
       title: 'The Prestige',
@@ -83,7 +83,7 @@ export class MovieListService {
       cast: ['Christian Bale', 'Hugh Jackman'],
       releaseDate: '2006-11-02',
       ticketPrice: 400,
-      
+      rating: []
     },
     {
       title: '1917',
@@ -94,7 +94,7 @@ export class MovieListService {
       cast: ['Dean-Charles Chapman', 'George MacKay'],
       releaseDate: '2029-12-25',
       ticketPrice: 600,
-      
+      rating: []
     },
     {
       title: 'The Revenant',
@@ -105,7 +105,7 @@ export class MovieListService {
       cast: ['LeonardoDiCaprio', 'Tom Hardy'],
       releaseDate: '2016-01-21',
       ticketPrice: 750,
-      
+      rating: []
     },
     {
       title: 'Once Upon a Time... in Hollywood',
@@ -113,10 +113,10 @@ export class MovieListService {
       genre: 'Action/Drama',
       duration: '162 min',
       director: 'Quentin Tarantino',
-      cast: ['LeonardoDiCaprio', 'Brad Pitt','Margot Robbie'],
+      cast: ['LeonardoDiCaprio', 'Brad Pitt', 'Margot Robbie'],
       releaseDate: '2019-07-26',
       ticketPrice: 800,
-      
+      rating: []
     }
   ];
 

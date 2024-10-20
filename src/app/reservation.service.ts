@@ -9,9 +9,7 @@ export class ReservationService {
   private ticketCount: number = 1;
   private reservations: { title: string; ticketCount: number }[] = [];
 
-  addReservation(reservation: { title: string; ticketCount: number }) {
-    this.reservations.push(reservation);
-  }
+  
 
   getReservations() {
     return this.reservations;

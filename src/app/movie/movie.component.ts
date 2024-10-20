@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms'
 import { MatFormField } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ReservationService } from '../reservation.service';
 
 interface MovieRating {
   excellent: boolean;
@@ -30,9 +31,10 @@ export class MovieComponent implements OnInit {
   movies: Movie[] = [];
   localRating: { [key: string]: MovieRating } = {};
   
+  
 
 
-  constructor(private movieListService: MovieListService, private router: Router) {}
+  constructor(private movieListService: MovieListService,private reservationService: ReservationService, private router: Router) {}
 
   ngOnInit(): void {
     this.movies = this.movieListService.getMovies();
@@ -49,6 +51,7 @@ export class MovieComponent implements OnInit {
 
   reserveMovie(movie: Movie) {
     this.router.navigate(['/reservations']);
+    this.reservationService.setSelectedMovie(movie);
   }
 
   submitRating(movie: Movie, rating: MovieRating) {

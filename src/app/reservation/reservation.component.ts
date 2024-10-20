@@ -27,9 +27,16 @@ export class ReservationComponent implements OnInit {
     this.ticketCount = this.reservationService.getTicketCount();
   }
   ngOnInit(): void {
+    this.movie = this.reservationService.getSelectedMovie();
+    if (!this.movie) {
+      console.error('No movie selected'); 
+  }
+
+
     if (this.ticketCount <= 0) {
       this.ticketCount = 1;
     }
+
   }
 
   getTotalPrice() {

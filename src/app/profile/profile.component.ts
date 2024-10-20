@@ -38,7 +38,7 @@ export class ProfileComponent implements OnInit {
     //@ts-ignore
     Swal.fire({
       title: "Enter your new password",
-      input: "text",
+      input: "password",
       inputAttributes: {
         autocapitalize: "off"
       },

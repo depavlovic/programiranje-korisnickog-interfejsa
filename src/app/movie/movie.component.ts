@@ -3,16 +3,18 @@ import {ChangeDetectionStrategy,Component, OnInit} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import { Movie } from './movie.model';
 import { MovieListService } from '../movie-list.service';
-import { NgFor } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { NgFor, NgIf } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms'
+import { MatFormField } from '@angular/material/form-field';
+import { ReservationService } from '../reservation.service';
 
 
 
 @Component({
   selector: 'app-movie',
   standalone: true,
-  imports: [MatCardModule,MatButtonModule,NgFor,RouterLink,FormsModule],
+  imports: [MatCardModule,MatButtonModule,NgFor,RouterLink,FormsModule,MatFormField,NgIf],
   //changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.css'
@@ -20,9 +22,10 @@ import { FormsModule } from '@angular/forms'
 export class MovieComponent implements OnInit {
   
   movies: Movie[] = [];
+  
  
 
-  constructor(private movieListService : MovieListService){
+  constructor(private movieListService : MovieListService,private reservationService:ReservationService,private router:Router){
     
   }
   
@@ -35,9 +38,10 @@ export class MovieComponent implements OnInit {
   ngOnInit(): void {
     this.movies = this.movieListService.getMovies();
   }
-      reserveMovie(movie:Movie){
-        console.log(`Movie "${movie.title} je rezervisan uspesno!"`)
-      }
+  reserveMovie(movie: any) {
+    this.reservationService.setSelectedMovie(movie);
+    this.router.navigate(['/reservations']);
+  }
 
   
   }

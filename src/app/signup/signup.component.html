@@ -6,7 +6,7 @@
         <mat-card-content>
             <mat-form-field class="width-full">
                 <mat-label>Email</mat-label>
-                <input type="email" matInput >
+                <input type="email" matInput (change)="updateEmail($event)">
               </mat-form-field >
               <mat-form-field class="width-full">
                 <mat-label>Name</mat-label>

@@ -13,5 +13,9 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './signup.component.css'
 })
 export class SignupComponent {
-
+    public email: string =''
+    public name:string=''
+    public surname:string=''
+    public password:string=''
+    public confirmPassword: string = ''
 }

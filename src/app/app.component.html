@@ -4,5 +4,12 @@
   <a routerLink="" mat-button>Movie</a>
   <a routerLink="search" mat-button>Search</a>
   <a routerLink="/reservations" mat-button>Reservations</a>
+  <a routerLink="/profile" mat-button *ngIf="userService.hasCurrentUser(); else profile">Profile</a>
+
 </mat-toolbar>
 <router-outlet />
+
+
+<ng-template #profile>
+  <a routerLink="/login" mat-button>Login</a>
+</ng-template>

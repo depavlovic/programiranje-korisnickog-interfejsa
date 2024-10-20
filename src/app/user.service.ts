@@ -72,20 +72,27 @@ export class UserService{
             return usr
             
     }
+
+    public hasCurrentUser(){
+        return sessionStorage.getItem('active') ? true : false
+    }
+
+
+
     public changePassword(password: string){
         const active = this.getCurrentUser()
         active.password = password
 
-        const all = this.retrieveAllUsers()
-        for(let user of all)
-            if(user.email == active.email){
-                user=active
+        var all = this.retrieveAllUsers()
+        for(let i =0; i<all.length; i++){
+            if(all[i].email == active.email){
+                all[i].password = password
             }
+        }
             localStorage.setItem('users',JSON.stringify(all))
     }
 
     public logout(){
-        const usr = this.getCurrentUser()
         sessionStorage.removeItem('active')
     }
     

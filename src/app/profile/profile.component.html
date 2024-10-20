@@ -1,2 +1,16 @@
-<p>profile works!</p>
-<pre>{{userService.getCurrentUser() | json}}</pre>
+<div class="profile-container" *ngIf="active">
+    <mat-card class="example-card" appearance="outlined">
+        <mat-card-header>
+          <mat-card-title class="text-white">{{active.name}}</mat-card-title>
+          <mat-card-subtitle>{{active.email}}</mat-card-subtitle>
+        </mat-card-header>
+        <!--<mat-card-content>
+        </mat-card-content>!-->
+        <mat-card-actions>
+          <button mat-button type="button" (click)="doLogout()">
+            <i class="fa-solid fa-share-from-square"></i>Logout</button>
+          <button mat-button type="button" (click)="doChangePassword()">
+            <i class="fa-solid fa-lock"></i>Change password</button>
+        </mat-card-actions>
+      </mat-card>
+</div>

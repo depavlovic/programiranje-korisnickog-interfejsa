@@ -83,3 +83,44 @@ A button to submit the login form.
 `Error Handling`
 The doLogin method alerts the user if the email or password fields are empty or if there is an error during the login process.
 
+## Search Component
+`Component Structure`
+`Properties`
+`movies:` An array of Movie objects containing all movies.
+`filteredMovies:` An array to hold movies that match the search criteria.
+`searchResults:` An array that stores the results of the search.
+`searchCriteria:` An object holding the search criteria for filtering.
+`Methods`
+`ngOnInit()`: Initializes the component by retrieving the list of movies from the MovieListService.
+`doSearch()`: Filters the movies based on the search criteria and updates the searchResults. It displays a summary of the results using SweetAlert.
+`Template`
+The component's template (search.component.html) should include:
+
+Input fields for each search criterion.
+A button to initiate the search.
+A section to display the filtered movie results.
+Notifications
+The doSearch method provides feedback to the user through SweetAlert notifications, displaying the number of search results and allowing for a friendly follow-up message
+
+## Signup Component
+`Dependencies`
+`Angular`
+`Angular Material` (MatInputModule, MatCardModule, MatFormFieldModule, MatButtonModule)
+`UserService` (for handling user registration)
+`Component Structure`
+`Properties`
+`email`: Holds the user's email input.
+`name`: Holds the user's first name.
+`surname`: Holds the user's last name.
+`password`: Holds the user's password.
+`confirmPassword`: Holds the password confirmation input.
+`userService`: An instance of UserService for managing user accounts.
+`Methods`
+`updateEmail(e: any)`: Updates the email property based on user input.
+`updateName(e: any)`: Updates the name property based on user input.
+`updateSurname(e: any)`: Updates the surname property based on user input.
+`updatePassword(e: any)`: Updates the password property based on user input.
+`updateConfirmPassword(e: any)`: Updates the confirmPassword property based on user input.
+`doSignup()`: Validates user inputs and attempts to create a new user. If successful, navigates to the movie page.
+`Validation`
+The `doSignup` method includes basic validation to check if all fields are filled. If the fields are empty, it alerts the user. You can enhance this method to include additional validations, such as password matching.

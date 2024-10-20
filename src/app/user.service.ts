@@ -40,7 +40,7 @@ export class UserService{
 
     public createUser(model:UserModel){
             const arr = this.retrieveAllUsers()
-            if(arr.find(user=>user.email = model.email))
+            if(arr.find(user=>user.email === model.email))
                 throw new Error('EMAIL_ALREADY_EXISTS')
             arr.push(model)
             localStorage.setItem('users',JSON.stringify(arr))

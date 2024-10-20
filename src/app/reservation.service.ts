@@ -7,6 +7,20 @@ import { Movie } from './movie/movie.model';
 export class ReservationService {
   private selectedMovie: Movie | null = null;
   private ticketCount: number = 1;
+  private reservations: { title: string; ticketCount: number }[] = [];
+
+  addReservation(reservation: { title: string; ticketCount: number }) {
+    this.reservations.push(reservation);
+  }
+
+  getReservations() {
+    return this.reservations;
+  }
+
+  
+  clearReservations() {
+    this.reservations = [];
+  }
 
   setSelectedMovie(movie: Movie) {
     this.selectedMovie = movie;
